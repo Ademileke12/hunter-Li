@@ -1,0 +1,29 @@
+{
+  "network": {
+    "timeout": "请求超时。请重试。",
+    "unavailable": "网络不可用。请检查您的连接。"
+  },
+  "wallet": {
+    "not_installed": "未找到钱包。请安装 {{walletName}}。",
+    "rejected": "用户拒绝连接。",
+    "transaction_failed": "交易失败：{{reason}}"
+  },
+  "storage": {
+    "quota_exceeded": "存储已满。清除旧数据？",
+    "corrupted": "数据损坏。重置为默认值。"
+  },
+  "token": {
+    "invalid_address": "无效的代币地址格式。",
+    "not_found": "未找到代币。"
+  },
+  "api": {
+    "rate_limited": "请求过多。请等待 {{seconds}} 秒。",
+    "error": "API 错误：{{message}}"
+  },
+  "widget": {
+    "load_failed": "加载小部件失败。",
+    "error": {
+      "generic": "此小部件发生错误。"
+    }
+  }
+}

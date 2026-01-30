@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dark-border;
+  }
+  
+  body {
+    @apply bg-dark-bg text-white font-sans antialiased;
+  }
+  
+  html, body, #root {
+    @apply h-full w-full overflow-hidden;
+  }
+}
+
+@layer components {
+  /* Button styles with smooth transitions */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg;
+  }
+  
+  .btn-primary {
+    @apply btn bg-blue-600 hover:bg-blue-700 text-white;
+    @apply hover:shadow-glow-blue active:scale-95;
+    @apply focus:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-700 hover:bg-gray-600 text-gray-200;
+    @apply active:scale-95;
+    @apply focus:ring-gray-500;
+  }
+  
+  .btn-danger {
+    @apply btn bg-red-600 hover:bg-red-700 text-white;
+    @apply hover:shadow-soft active:scale-95;
+    @apply focus:ring-red-500;
+  }
+  
+  .btn-icon {
+    @apply p-2 rounded-lg transition-all duration-200 ease-in-out;
+    @apply hover:bg-white/10 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+  
+  /* Input styles */
+  .input {
+    @apply w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg;
+    @apply text-white placeholder-gray-500;
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+  }
+  
+  /* Card styles with glassmorphism */
+  .card {
+    @apply bg-dark-card rounded-xl border border-dark-border;
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .card-hover {
+    @apply card hover:border-gray-600;
+  }
+  
+  /* Interactive elements */
+  .interactive {
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:scale-105 active:scale-95;
+  }
+  
+  /* Tooltip base */
+  .tooltip {
+    @apply absolute z-50 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg;
+    @apply pointer-events-none opacity-0 transition-opacity duration-200;
+    @apply border border-gray-700;
+  }
+  
+  .tooltip-visible {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glassmorphism-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/5;
+  }
+  
+  .glassmorphism-hover {
+    @apply glassmorphism hover:bg-white/10;
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  /* Smooth scrollbar */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 255, 0.3) rgba(255, 255, 255, 0.05);
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 100, 255, 0.5);
+  }
+  
+  /* Focus visible for keyboard navigation */
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg;
+  }
+  
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .sr-only-focusable:focus,
+  .sr-only-focusable:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  @apply text-gray-200 leading-relaxed;
+  min-height: 100%;
+  outline: none;
+}
+
+.ProseMirror p {
+  @apply mb-3;
+}
+
+.ProseMirror h1 {
+  @apply text-2xl font-bold mb-4 text-gray-100;
+}
+
+.ProseMirror h2 {
+  @apply text-xl font-bold mb-3 text-gray-100;
+}
+
+.ProseMirror h3 {
+  @apply text-lg font-bold mb-2 text-gray-100;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  @apply pl-6 mb-3;
+}
+
+.ProseMirror ul {
+  @apply list-disc;
+}
+
+.ProseMirror ol {
+  @apply list-decimal;
+}
+
+.ProseMirror li {
+  @apply mb-1;
+}
+
+.ProseMirror code {
+  @apply bg-gray-800 text-blue-300 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.ProseMirror pre {
+  @apply bg-gray-800 text-gray-300 p-4 rounded-lg mb-3 overflow-x-auto;
+}
+
+.ProseMirror pre code {
+  @apply bg-transparent p-0;
+}
+
+.ProseMirror a {
+  @apply text-blue-400 hover:text-blue-300 underline cursor-pointer;
+}
+
+.ProseMirror blockquote {
+  @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 mb-3;
+}
+
+.ProseMirror hr {
+  @apply border-gray-700 my-4;
+}
+
+/* Placeholder */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply text-gray-600 float-left h-0 pointer-events-none;
+}

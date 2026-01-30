@@ -1,0 +1,197 @@
+/* WidgetContainer Styles */
+
+/* Override react-resizable default styles */
+.widget-resizable {
+  position: relative;
+}
+
+.widget-resizable .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-image: none;
+  z-index: 10;
+}
+
+/* Corner handles */
+.widget-resizable .react-resizable-handle-se {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.widget-resizable .react-resizable-handle-sw {
+  bottom: 0;
+  left: 0;
+  cursor: sw-resize;
+}
+
+.widget-resizable .react-resizable-handle-ne {
+  top: 0;
+  right: 0;
+  cursor: ne-resize;
+}
+
+.widget-resizable .react-resizable-handle-nw {
+  top: 0;
+  left: 0;
+  cursor: nw-resize;
+}
+
+/* Edge handles */
+.widget-resizable .react-resizable-handle-n {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: n-resize;
+  width: 100%;
+  height: 10px;
+}
+
+.widget-resizable .react-resizable-handle-s {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: s-resize;
+  width: 100%;
+  height: 10px;
+}
+
+.widget-resizable .react-resizable-handle-e {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: e-resize;
+  width: 10px;
+  height: 100%;
+}
+
+.widget-resizable .react-resizable-handle-w {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: w-resize;
+  width: 10px;
+  height: 100%;
+}
+
+/* Visual indicator for resize handles */
+.widget-resizable .react-resizable-handle::after {
+  content: '';
+  position: absolute;
+  background: rgba(100, 100, 255, 0.3);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.widget-resizable:hover .react-resizable-handle::after {
+  opacity: 1;
+}
+
+/* Corner handle indicators */
+.widget-resizable .react-resizable-handle-se::after,
+.widget-resizable .react-resizable-handle-sw::after,
+.widget-resizable .react-resizable-handle-ne::after,
+.widget-resizable .react-resizable-handle-nw::after {
+  width: 8px;
+  height: 8px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.widget-resizable .react-resizable-handle-sw::after {
+  left: 4px;
+  right: auto;
+}
+
+.widget-resizable .react-resizable-handle-ne::after {
+  top: 4px;
+  bottom: auto;
+}
+
+.widget-resizable .react-resizable-handle-nw::after {
+  top: 4px;
+  left: 4px;
+  bottom: auto;
+  right: auto;
+}
+
+/* Edge handle indicators */
+.widget-resizable .react-resizable-handle-n::after,
+.widget-resizable .react-resizable-handle-s::after {
+  width: 40px;
+  height: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.widget-resizable .react-resizable-handle-n::after {
+  top: 2px;
+}
+
+.widget-resizable .react-resizable-handle-s::after {
+  bottom: 2px;
+}
+
+.widget-resizable .react-resizable-handle-e::after,
+.widget-resizable .react-resizable-handle-w::after {
+  width: 4px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.widget-resizable .react-resizable-handle-e::after {
+  right: 2px;
+}
+
+.widget-resizable .react-resizable-handle-w::after {
+  left: 2px;
+}
+
+/* Widget container animations */
+.widget-container {
+  transition: box-shadow 0.2s ease;
+}
+
+.widget-container:hover {
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Title bar grab cursor when dragging */
+.widget-title-bar:active {
+  cursor: grabbing !important;
+}
+
+/* Smooth transitions for control buttons */
+.widget-control-btn {
+  transition: all 0.2s ease;
+}
+
+.widget-control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Custom scrollbar for widget content */
+.widget-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.widget-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.widget-content::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 255, 0.3);
+  border-radius: 4px;
+}
+
+.widget-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 255, 0.5);
+}

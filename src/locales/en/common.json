@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "Assistant Hunter Li",
+    "subtitle": "Crypto Discovery Platform"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "refresh": "Refresh",
+    "duplicate": "Duplicate"
+  },
+  "language": {
+    "en": "English",
+    "zh-CN": "简体中文"
+  },
+  "topbar": {
+    "search_placeholder": "Search token address or symbol...",
+    "wallet_connect": "Connect Wallet",
+    "wallet_disconnect": "Disconnect",
+    "wallet_connected": "Connected",
+    "language_toggle": "Language"
+  },
+  "annotations": {
+    "pencil": "Pencil",
+    "arrow": "Arrow",
+    "highlight": "Highlight",
+    "text": "Text",
+    "show": "Show annotations",
+    "hide": "Hide annotations",
+    "clear_all": "Clear all annotations",
+    "clear_confirm": "Are you sure you want to clear all {{count}} annotation(s)?",
+    "count": "{{count}} annotation",
+    "count_plural": "{{count}} annotations",
+    "enter_text": "Enter text:"
+  }
+}

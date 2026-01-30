@@ -1,0 +1,48 @@
+{
+  "categories": {
+    "discovery": "Discovery",
+    "analysis": "Analysis",
+    "execution": "Execution",
+    "alpha": "Alpha Feeds",
+    "utilities": "Utilities"
+  },
+  "widgets": {
+    "dexscreener": "DexScreener",
+    "dextools": "DexTools",
+    "birdeye": "Birdeye",
+    "new-pairs": "New Pairs",
+    "trending": "Trending Tokens",
+    "token-overview": "Token Overview",
+    "holder-distribution": "Holder Distribution",
+    "lp-overview": "LP Overview",
+    "token-age": "Token Age",
+    "deployer-info": "Deployer Info",
+    "risk-flags": "Risk Flags",
+    "swap": "Swap",
+    "quick-buy": "Quick Buy",
+    "twitter-embed": "Twitter Feed",
+    "telegram-channel": "Telegram Channel",
+    "rss-feed": "RSS Feed",
+    "notes": "Notes",
+    "checklist": "Checklist",
+    "block-clock": "Block Clock",
+    "pnl-tracker": "PnL Tracker"
+  },
+  "checklist": {
+    "addItem": "Add new item...",
+    "add": "Add",
+    "delete": "Delete",
+    "empty": "No items yet. Add your first item above."
+  },
+  "pnlTracker": {
+    "addEntry": "Add Entry",
+    "token": "Token",
+    "entry": "Entry Price",
+    "exit": "Exit Price",
+    "amount": "Amount",
+    "pnl": "PnL",
+    "total": "Total PnL",
+    "delete": "Delete",
+    "empty": "No trades yet. Add your first entry above."
+  }
+}

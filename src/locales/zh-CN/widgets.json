@@ -1,0 +1,48 @@
+{
+  "categories": {
+    "discovery": "发现",
+    "analysis": "分析",
+    "execution": "执行",
+    "alpha": "Alpha 源",
+    "utilities": "工具"
+  },
+  "widgets": {
+    "dexscreener": "DexScreener",
+    "dextools": "DexTools",
+    "birdeye": "Birdeye",
+    "new-pairs": "新交易对",
+    "trending": "热门代币",
+    "token-overview": "代币概览",
+    "holder-distribution": "持有者分布",
+    "lp-overview": "流动性概览",
+    "token-age": "代币年龄",
+    "deployer-info": "部署者信息",
+    "risk-flags": "风险标记",
+    "swap": "交换",
+    "quick-buy": "快速购买",
+    "twitter-embed": "Twitter 动态",
+    "telegram-channel": "Telegram 频道",
+    "rss-feed": "RSS 订阅",
+    "notes": "笔记",
+    "checklist": "清单",
+    "block-clock": "区块时钟",
+    "pnl-tracker": "盈亏追踪"
+  },
+  "checklist": {
+    "addItem": "添加新项目...",
+    "add": "添加",
+    "delete": "删除",
+    "empty": "还没有项目。在上方添加您的第一个项目。"
+  },
+  "pnlTracker": {
+    "addEntry": "添加记录",
+    "token": "代币",
+    "entry": "入场价格",
+    "exit": "出场价格",
+    "amount": "数量",
+    "pnl": "盈亏",
+    "total": "总盈亏",
+    "delete": "删除",
+    "empty": "还没有交易记录。在上方添加您的第一条记录。"
+  }
+}

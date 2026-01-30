@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "Assistant Hunter Li",
+    "subtitle": "加密货币发现平台"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "retry": "重试",
+    "close": "关闭",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "search": "搜索",
+    "refresh": "刷新",
+    "duplicate": "复制"
+  },
+  "language": {
+    "en": "English",
+    "zh-CN": "简体中文"
+  },
+  "topbar": {
+    "search_placeholder": "搜索代币地址或符号...",
+    "wallet_connect": "连接钱包",
+    "wallet_disconnect": "断开连接",
+    "wallet_connected": "已连接",
+    "language_toggle": "语言"
+  },
+  "annotations": {
+    "pencil": "铅笔",
+    "arrow": "箭头",
+    "highlight": "高亮",
+    "text": "文本",
+    "show": "显示注释",
+    "hide": "隐藏注释",
+    "clear_all": "清除所有注释",
+    "clear_confirm": "确定要清除所有 {{count}} 个注释吗？",
+    "count": "{{count}} 个注释",
+    "count_plural": "{{count}} 个注释",
+    "enter_text": "输入文本："
+  }
+}

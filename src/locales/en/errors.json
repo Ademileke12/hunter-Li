@@ -1,0 +1,29 @@
+{
+  "network": {
+    "timeout": "Request timed out. Please try again.",
+    "unavailable": "Network unavailable. Please check your connection."
+  },
+  "wallet": {
+    "not_installed": "Wallet not found. Please install {{walletName}}.",
+    "rejected": "Connection rejected by user.",
+    "transaction_failed": "Transaction failed: {{reason}}"
+  },
+  "storage": {
+    "quota_exceeded": "Storage full. Clear old data?",
+    "corrupted": "Data corrupted. Resetting to defaults."
+  },
+  "token": {
+    "invalid_address": "Invalid token address format.",
+    "not_found": "Token not found."
+  },
+  "api": {
+    "rate_limited": "Too many requests. Please wait {{seconds}}s.",
+    "error": "API error: {{message}}"
+  },
+  "widget": {
+    "load_failed": "Failed to load widget.",
+    "error": {
+      "generic": "An error occurred in this widget."
+    }
+  }
+}
