@@ -11,7 +11,7 @@ export interface TokenOverview {
   volume24h: number;
   marketCap: number;
   liquidity: number;
-  liquidity: number;
+
   logoURI?: string;
   pairAddress?: string;
 }

@@ -51,7 +51,7 @@ OptimizedWidget.displayName = 'OptimizedWidget';
  */
 export function withOptimization<P extends { instance: WidgetInstance }>(
   Component: React.ComponentType<P>
-): React.ComponentType<P> {
+) {
   const OptimizedComponent = memo(Component, (prevProps, nextProps) => {
     return areWidgetPropsEqual(
       { instance: prevProps.instance },

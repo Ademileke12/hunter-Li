@@ -11,9 +11,9 @@
  * - 7.8: Execute swap transaction via wallet adapter
  */
 
-import { Connection, VersionedTransaction, PublicKey } from '@solana/web3.js';
+import { Connection, VersionedTransaction } from '@solana/web3.js';
 import { createJupiterApiClient, QuoteGetRequest, QuoteResponse, SwapPostRequest } from '@jup-ag/api';
-import type { QuoteParams, SwapQuote, SwapParams, SwapResult, SwapTransaction } from '../types/jupiter';
+import type { QuoteParams, SwapQuote, SwapParams, SwapResult } from '../types/jupiter';
 
 /**
  * JupiterClient provides swap quote and execution functionality
@@ -75,8 +75,9 @@ export class JupiterClient {
   ): Promise<SwapResult> {
     try {
       // Get the swap transaction from Jupiter
-      const swapRequest: SwapPostRequest = {
-        quoteResponse: params.quoteResponse as unknown as QuoteResponse,
+      // Use 'any' cast here because the SDK types might be outdated mostly regarding dynamicComputeUnitLimit
+      const swapRequest: any = {
+        quoteResponse: params.quoteResponse,
         userPublicKey: params.userPublicKey,
         wrapAndUnwrapSol: params.wrapAndUnwrapSol ?? true,
         dynamicComputeUnitLimit: params.dynamicComputeUnitLimit ?? true,
@@ -84,8 +85,8 @@ export class JupiterClient {
       };
 
       const swapResponse = await this.jupiterApi.swapPost({
-        swapRequest,
-      });
+        swapRequest: swapRequest,
+      } as any);
 
       if (!swapResponse || !swapResponse.swapTransaction) {
         throw new Error('No swap transaction received from Jupiter');
@@ -120,7 +121,7 @@ export class JupiterClient {
       return result;
     } catch (error) {
       console.error('Error executing swap:', error);
-      
+
       return {
         signature: '',
         status: 'failed',
@@ -140,7 +141,7 @@ export class JupiterClient {
   private async confirmTransaction(signature: string, result: SwapResult): Promise<void> {
     try {
       const confirmation = await this.connection.confirmTransaction(signature, 'confirmed');
-      
+
       if (confirmation.value.err) {
         result.status = 'failed';
         result.error = 'Transaction failed on-chain';
@@ -177,10 +178,10 @@ export class JupiterClient {
           outputMint: step.swapInfo.outputMint,
           inAmount: step.swapInfo.inAmount,
           outAmount: step.swapInfo.outAmount,
-          feeAmount: step.swapInfo.feeAmount,
-          feeMint: step.swapInfo.feeMint,
+          feeAmount: (step.swapInfo as any).feeAmount || '0',
+          feeMint: (step.swapInfo as any).feeMint || '',
         },
-        percent: step.percent,
+        percent: step.percent || 0,
       })),
       contextSlot: quote.contextSlot,
       timeTaken: quote.timeTaken,
@@ -225,9 +226,14 @@ export class JupiterClient {
   }
 }
 
+import { solanaClient } from './SolanaClient';
+
 // Export a factory function to create instances
 export const createJupiterClient = (connection: Connection): JupiterClient => {
   return new JupiterClient(connection);
 };
+
+// Export a singleton instance for convenience
+export const jupiterClient = new JupiterClient(solanaClient.getConnection());
 
 export default JupiterClient;

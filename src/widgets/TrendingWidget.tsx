@@ -309,6 +309,7 @@ const TrendingWidget: React.FC<TrendingWidgetProps> = ({ instance }) => {
                   style={{
                     borderBottom: '1px solid rgba(255, 255, 255, 0.03)',
                     transition: 'background 0.2s',
+                    cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)';
@@ -319,11 +320,6 @@ const TrendingWidget: React.FC<TrendingWidgetProps> = ({ instance }) => {
                   onClick={() => {
                     const addressToUse = token.pairAddress || token.address;
                     window.open(`https://www.dextools.io/app/en/solana/pair-explorer/${addressToUse}`, '_blank');
-                  }}
-                  style={{
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.03)',
-                    transition: 'background 0.2s',
-                    cursor: 'pointer',
                   }}
                 >
                   <td style={{ padding: '12px 8px' }}>

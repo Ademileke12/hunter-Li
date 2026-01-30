@@ -82,7 +82,7 @@ function VirtualListComponent<T>({
 }
 
 // Memoize the component to prevent unnecessary re-renders
-export const VirtualList = memo(VirtualListComponent) as typeof VirtualListComponent;
+export const VirtualList = memo(VirtualListComponent);
 
 VirtualList.displayName = 'VirtualList';
 
