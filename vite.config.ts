@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@floating-ui/dom': path.resolve(__dirname, 'node_modules/@floating-ui/dom'),
     },
   },
   define: {
